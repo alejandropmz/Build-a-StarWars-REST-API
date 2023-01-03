@@ -1,8 +1,8 @@
 """empty message
 
-Revision ID: 42809cca5bd5
+Revision ID: 770ef5f7b86d
 Revises: 
-Create Date: 2022-12-29 20:50:02.048876
+Create Date: 2023-01-03 03:02:28.254517
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '42809cca5bd5'
+revision = '770ef5f7b86d'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -54,7 +54,7 @@ def upgrade():
     sa.Column('languaje', sa.String(length=100), nullable=False),
     sa.Column('skin_color', sa.String(length=100), nullable=False),
     sa.Column('eye_color', sa.String(length=50), nullable=False),
-    sa.Column('average_lifespan', sa.Integer(), nullable=False),
+    sa.Column('average_lifespan', sa.String(length=100), nullable=False),
     sa.PrimaryKeyConstraint('id')
     )
     op.create_table('starships',
@@ -63,7 +63,7 @@ def upgrade():
     sa.Column('manufacturer', sa.String(length=100), nullable=False),
     sa.Column('lenght', sa.Integer(), nullable=False),
     sa.Column('cargo_capacity', sa.Integer(), nullable=False),
-    sa.Column('consumables', sa.Integer(), nullable=False),
+    sa.Column('consumables', sa.String(length=100), nullable=False),
     sa.Column('max_atmosphering_speed', sa.Integer(), nullable=False),
     sa.PrimaryKeyConstraint('id')
     )
@@ -81,7 +81,7 @@ def upgrade():
     sa.Column('manufacturer', sa.String(length=100), nullable=False),
     sa.Column('lenght', sa.Integer(), nullable=False),
     sa.Column('cargo_capacity', sa.Integer(), nullable=False),
-    sa.Column('consumables', sa.Integer(), nullable=False),
+    sa.Column('consumables', sa.String(length=100), nullable=False),
     sa.PrimaryKeyConstraint('id')
     )
     op.create_table('favorites',
